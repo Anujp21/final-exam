@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements OnInit {
+
   title = 'finalexam';
 
   number1: number = 0;
-  number2: number = 0;
+  number2: number = 15;
   errors: string;
   results: string;
 
+  ngOnInit(){
+
+  }
 
   validate(){
     this.errors = ''
@@ -44,6 +48,13 @@ export class AppComponent {
     console.log(this.number1)
     this.results = '';
     this.validate();
+
+    
+    for( let i = this.number1; i< this.number2; i++){
+      if( i % 2  == 0){
+        this.results = this.results + ' , ' +i;
+      }
+    }
 
 
   }
