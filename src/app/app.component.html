@@ -6,18 +6,20 @@
     </div>
     <div class="form-group col-lg-5">
       <label for="number1">Number 1:</label>
-      <input type="text" class="form-control" id="number1">
+      <input type="text" class="form-control" id="number1" [(ngModel)]='number1'>
     </div>
 
     <div class="form-group col-lg-5">
       <label for="number2">Number 2:</label>
-      <input type="text" class="form-control" id="number2">
+      <input type="text" class="form-control" id="number2" [(ngModel)]='number2'>
     </div>
   </div>
 
-  <button type="button" class="btn btn-success">Submit</button>
+  <button type="button" class="btn btn-success" (click)="calculate()">Submit</button>
   <div class="form-group">
     <label for="comment">Calculation result:</label>
-    <textarea class="form-control" rows="5" id="result"></textarea>
+    <textarea class="form-control" rows="5" id="result">
+    {{errors}}
+    </textarea>
   </div>
 </div>
